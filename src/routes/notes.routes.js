@@ -35,4 +35,4 @@ router.put('/notes/edit/:id', isAuthenticated, updateNote);   // el put actualiz
 router.delete('/notes/delete/:id', isAuthenticated, deleteNote);    //con este metodo borramos lo que haya en esa ruta
 
 
-module.exports = router;
+module.exports = router; 

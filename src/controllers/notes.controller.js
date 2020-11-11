@@ -62,15 +62,17 @@ notesCtrl.updateNote = async (req, res) => {
 }
 
 
+
+
 notesCtrl.deleteNote = async (req, res) => {
-    
-    if(note.user != req.user.id){   //con esta validacion vemos si el usuario quiere acceder a editar una nota que no le corresponda
+ 
+    const note = await Note.findById(req.params.id)
+    if(note.user != req.user.id){  
         req.flash('error_msg', 'Not Authorized');
         return res.redirect('/notes');
     }
     
     await Note.findByIdAndDelete(req.params.id);
-
     req.flash('success_msg', 'Note Deleted Successfully');
 
     res.redirect('/notes');
