@@ -1,4 +1,6 @@
-require("dotenv").config(); //config lo que hace es que si al inicio de nuestro proyecto hay un archito llamado .env leera lo quue tiene 
+const dotenv = require('dotenv')
+
+dotenv.config(); //config lo que hace es que si al inicio de nuestro proyecto hay un archito llamado .env leera lo quue tiene 
                                //dentro y lo asigna a una variable de entorno 
 
 const app = require('./server');  //llamamos la variable app en index.js para trabajar con ella
