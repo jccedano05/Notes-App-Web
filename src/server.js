@@ -25,7 +25,7 @@ require('./config/passport');
 // --------- SETTINGS -----------
 //es lo que yo quiero que haga express basado a unos modulos
 
-app.set('port', process.env.PORT || 4000 || 'https://notes-app-jccv.netlify.app/');  //configuramos nuesto puerto por donde tengamos el servidor. process.env.PORT hace referencia a una variable de entorno, quiere decir que si nuestro computador tiene una variable llamada port que la utilice, si no que utilice el puerto 4000
+app.set('port', process.env.PORT || 4000);  //configuramos nuesto puerto por donde tengamos el servidor. process.env.PORT hace referencia a una variable de entorno, quiere decir que si nuestro computador tiene una variable llamada port que la utilice, si no que utilice el puerto 4000
 
 app.set('views', path.join(__dirname , 'views') ); //tenemos que decirle donde se encuentra la carpeta views, le damos la direccion con __dirname que nos ubica desde la raiz (sea linux, windows, mac) y nos lleva hasta la carpeta src que se encuentra server.js quien llama la funcion y path.join concatena la ruta ya que usar / podria funcionar para un sistema operativo mas otros no. view nos sirve para renderizar una vista
   
