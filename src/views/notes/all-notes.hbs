@@ -1,0 +1,22 @@
+<div class="row">
+    {{#each notes}}
+    <!-- de esta manera creamos un bucle para cada elemento de notes y es una sintaxis handlebar asi que al final lo convierte en html puro-->
+
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title d-flex justify-content-between align-items-center">
+                    {{title}} <a href="/notes/edit/{{_id}}"><i class="fa fa-pencil"></i></a></h4>
+                <p>{{description}}</p>
+                <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+                    <!-- ?_method=DELETE llama al override y convierte el POST en DELETE-->
+                    <input type="hidden" name="_method" value="DELETE">
+                    <!-- para que sirva el override necesitamos hacer un input hidden para darle el valor y nombre y funcione cuando lo mandemos a routes -->
+                    <button type="submit" class="btn btn-danger btn-block btn-sm">Delete</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
