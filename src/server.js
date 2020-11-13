@@ -5,7 +5,7 @@ const express = require('express'); //para inicializar el servgidor importamos e
 const path = require('path');  //para usar path.join este modulo viene por defecto
 const exphbs = require('express-handlebars');  //es el motor de plantilla que usaremos
 const { extname } = require('path');
-const morgan = require('morgan');   //este nos permite ver 
+//const morgan = require('morgan');   //este nos permite ver 
 const methodOverride = require('method-override');  //este nos ayudara a poder hacer la funcion delete, funciona como un middleware
 const flash = require('connect-flash');
 const session =require('express-session');
@@ -52,7 +52,7 @@ app.set('view engine', '.hbs');   //le decimos que el motod de la plantilla que 
 // --------- MIDDLEWARES -----------
 //funciones que se van ejecutando a medida que nos llegan las peticiones ya sea Json u otro
 
-app.use(morgan('dev'));  //esto nos ayuda a saber si la peticion al servidor fallo, entro y demas
+//app.use(morgan('dev'));  //esto nos ayuda a saber si la peticion al servidor fallo, entro y demas
 
 
 app.use(express.urlencoded({extended: false})); //cada vez que llegan datos de un formulario a traves de cualquier tipo de metodo, lo convertiremos a Json para poderlo manipular en codigo
